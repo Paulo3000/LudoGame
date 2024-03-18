@@ -27,30 +27,35 @@ int main() {
 #include <stdio.h>
 #include <windows.h>
 
-#define FOREGROUND_YELLOW 14
+#define FOREGROUND_BLUE 1
+#define FOREGROUND_RED 4
 
 int main() {
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 
-    char matriz[3][3] = {
-        { '#','#','#' },
-        { '#', 3, '#' },
-        { '#', '#', '#' }
-    };
+    // Definindo cores para a primeira e última coluna
+    SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE); // Cor para a primeira coluna
+    SetConsoleTextAttribute(hConsole, FOREGROUND_RED); // Cor para a última coluna
 
-    for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < 3; j++) {
-            if (matriz[i][j] == 3) {
-                SetConsoleTextAttribute(hConsole, FOREGROUND_RED);
+    // Definindo as dimensões da matriz
+    int linhas = 3;
+    int colunas = 3;
+
+    // Criando a matriz e preenchendo com o caractere 254
+    char matriz[linhas][colunas];
+    for (int i = 0; i < linhas; i++) {
+        for (int j = 0; j < colunas; j++) {
+            if (j == 0) {
+                SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE); // Cor para a primeira coluna
+            } else if (j == colunas - 1) {
+                SetConsoleTextAttribute(hConsole, FOREGROUND_RED); // Cor para a última coluna
             } else {
-                // Define a cor padrão
-                SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN);
+                SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE); // Cor padrão
             }
-            printf("%c", matriz[i][j]);
+            printf("%c ", 254); // Caractere 254 (caractere de bloco)
         }
         printf("\n");
     }
 
     return 0;
 }
-

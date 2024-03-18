@@ -40,9 +40,15 @@ main()
         for(int j=0; j<15; j++)
         {
             mat2[i][j]=207;
+              mat2[7][7] = 4;
         }
         printf("\n");
     }
+
+
+
+
+
 
 // MATRIZ LADO VERMELHO
 
@@ -173,6 +179,12 @@ main()
                 SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_GREEN);
             }
 
+
+
+
+
+
+
             else if(mat2[i][j] == CasaRed )
             {
                 SetConsoleTextAttribute(hConsole, FOREGROUND_RED);
@@ -181,12 +193,61 @@ main()
             {
                 SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN);
             }
-            else if(mat2[i][j]== CasaBlue){
-                 SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE);
+            else if(mat2[i][j]== CasaBlue)
+            {
+                SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE);
             }
-            else if(mat2[i][j]== CasaYellow){
+            else if(mat2[i][j]== CasaYellow)
+            {
                 SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_GREEN);
             }
+
+
+
+
+
+
+            else if(i==6 && j==1)
+            {
+
+                SetConsoleTextAttribute(hConsole, FOREGROUND_RED);
+            }
+            else if(i==7 &&j>=1 &&j<=6)
+            {
+                SetConsoleTextAttribute(hConsole, FOREGROUND_RED);
+            }
+
+            else if(i==1 && j==8){
+                SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN);
+            }
+            else if(i>=1 && j==7 &&i<=6){
+                SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN);
+            }
+            else if(i==8 && j==13){
+                 SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_GREEN);
+            }
+            else if(i==7 && j>=8 && j<=13){
+                 SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_GREEN);
+            }
+            else if(i==13 && j==6){
+                 SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE);
+            }
+           else if(j==7 && i<=13 && i>=8){
+                 SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE);
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
