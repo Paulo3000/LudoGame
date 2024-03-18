@@ -12,6 +12,10 @@ main()
     int Player02_wood  = 0;
     int Player03_sword = 0;
     int Player04_smile = 0;
+    int CasaRed = 0;
+    int CasaGreen = 0;
+    int CasaBlue = 0;
+    int CasaYellow =0;
 
 
     simbolo_trilha = 254;
@@ -19,6 +23,10 @@ main()
     Player02_wood  = 5;
     Player03_sword = 6;
     Player04_smile = 1;
+    CasaRed = 82;
+    CasaGreen = 71;
+    CasaBlue = 66;
+    CasaYellow =89;
 
 
 
@@ -44,7 +52,9 @@ main()
     {
         for(int j=0; j<6; j++)
         {
-            mat2[i][j] = 176;
+            mat2[i][j] = CasaRed;
+
+
         }
         printf("\n");
     }
@@ -52,6 +62,7 @@ main()
     mat2[1][4] = Player01_heart;
     mat2[4][1] = Player01_heart;
     mat2[4][4] = Player01_heart;
+
 
     //TRILHA VERMELHA
 
@@ -69,7 +80,7 @@ main()
     {
         for(int j=9; j<15; j++)
         {
-            mat2[i][j] = 176;
+            mat2[i][j] = CasaGreen;
         }
         printf("\n");
     }
@@ -94,7 +105,7 @@ main()
     {
         for(int j=9; j<15; j++)
         {
-            mat2[i][j] = 176;
+            mat2[i][j] = CasaYellow;
         }
         printf("\n");
     }
@@ -117,7 +128,7 @@ main()
     {
         for(int j=0; j<6; j++)
         {
-            mat2[i][j] = 176;
+            mat2[i][j] = CasaBlue;
         }
         printf("\n");
     }
@@ -144,24 +155,45 @@ main()
         {
 
 
-          if(mat2[i][j]==3){
-           SetConsoleTextAttribute(hConsole, FOREGROUND_RED);
+            if(mat2[i][j]==3)
+            {
+                SetConsoleTextAttribute(hConsole, FOREGROUND_RED);
 
-          }
-            else if(mat2[i][j]== 5){
-            SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN);
-          }
-          else if(mat2[i][j] == 6){
-            SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE);
-          }
-          else if(mat2[i][j] == 1){
-            SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_GREEN);
-          }
+            }
+            else if(mat2[i][j]== 5)
+            {
+                SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN);
+            }
+            else if(mat2[i][j] == 6)
+            {
+                SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE);
+            }
+            else if(mat2[i][j] == 1)
+            {
+                SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_GREEN);
+            }
+
+            else if(mat2[i][j] == CasaRed )
+            {
+                SetConsoleTextAttribute(hConsole, FOREGROUND_RED);
+            }
+            else if(mat2[i][j]== CasaGreen)
+            {
+                SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN);
+            }
+            else if(mat2[i][j]== CasaBlue){
+                 SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE);
+            }
+            else if(mat2[i][j]== CasaYellow){
+                SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_GREEN);
+            }
 
 
-          else{
-             SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
-          }
+
+            else
+            {
+                SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
+            }
 
 
 
